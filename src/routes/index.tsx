@@ -28,6 +28,7 @@ function Index() {
   const [remaining, setRemaining] = useState(TEST_DURATION);
   const [pageIdx, setPageIdx] = useState(0);
   const startedAt = useRef<number | null>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (phase !== "running") return;
@@ -45,7 +46,12 @@ function Index() {
   }, [phase]);
 
   const start = () => {
-    if (!name.trim()) return;
+    const finalName = (nameRef.current?.value ?? name).trim();
+    if (!finalName) {
+      nameRef.current?.focus();
+      return;
+    }
+    setName(finalName);
     startedAt.current = Date.now();
     setRemaining(TEST_DURATION);
     setPageIdx(0);
@@ -87,6 +93,7 @@ function Index() {
             Your name
           </label>
           <input
+            ref={nameRef}
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name"
@@ -95,8 +102,7 @@ function Index() {
 
           <button
             onClick={start}
-            disabled={!name.trim()}
-            className="mt-6 w-full rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
+            className="mt-6 w-full rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
           >
             Start Test
           </button>
