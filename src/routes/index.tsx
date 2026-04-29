@@ -152,7 +152,7 @@ function Index() {
       <header className="sticky top-0 z-10 border-b border-border bg-card/90 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
           <div className="min-w-0">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground">AFCAT Mock 02</p>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground">Practice Test</p>
             <p className="truncate text-sm font-semibold text-foreground">{name}</p>
           </div>
           <div
