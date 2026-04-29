@@ -76,10 +76,9 @@ function Index() {
       <div className="min-h-screen flex items-center justify-center bg-background px-4">
         <div className="w-full max-w-lg rounded-2xl border border-border bg-card p-8 shadow-sm">
           <div className="mb-6">
-            <p className="text-xs font-semibold tracking-widest text-primary uppercase">AFCAT</p>
-            <h1 className="mt-1 text-3xl font-bold text-foreground">Mock Test 02</h1>
+            <h1 className="text-3xl font-bold text-foreground">Practice Test</h1>
             <p className="mt-2 text-sm text-muted-foreground">
-              Air Force Common Admission Test — 100 questions • 4 hours
+              100 questions • 4 hours
             </p>
           </div>
 
